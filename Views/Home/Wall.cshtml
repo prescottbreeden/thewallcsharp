@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "The Wall";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<form asp-controller="Home" asp-action="logout" method="POST">
+    <button type="submit">Logout</button>
+</form>
+
+<h1>Welcome @ViewBag.user_fn, to the amazing and totally original 'Friend-Book'!</h1>
+<div class="post">
+    <h3>What's on your mind:</h3>
+    <form action="/post" method="POST">
+    <textarea cols="80" rows="3" name="content"></textarea>
+    <div class="buttons">
+        <button type="submit">Publish Post</button>
+    </div>
+    </form>
+</div>
+<h2>Posts to the Wall</h2>
+<div class="all_posts">
+    @{
+        foreach (var post in ViewBag.all_posts)
+        {
+            <div class="single_post">
+                <h4>@post["user_name"] -- @post["time"]</h4>
+                <h2>@post["content"]</h2>
+                <div class="all_comments">
+                    @{
+                        foreach (var comment in ViewBag.all_comments)
+                        {
+                            if (comment["parent_id"] == post["id"])
+                            {
+                                <p>@comment["content"]</p>
+                                <p>@comment["user_name"] -- @comment["time"]</p>
+                            }
+                        }
+                    }
+                </div>
+                <h3>Add a Comment:</h3>
+                <form action='/comment' method='POST'>
+                    <input type="hidden" name="postId" value="@post["id"]">
+                    <textarea name="content" rows="2" cols="40"></textarea>
+                    <div class="buttons">
+                        <button type="submit">Publish Comment</button>
+                    </div>
+				</form>
+            </div>
+        }
+    }
+</div>

@@ -1,0 +1,86 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model login_reg.Models.User
+<div class="wrapper">
+    <div class="content">
+        <div class="registration_form">
+            <h3>Register</h3>
+            <table>
+                <form asp-controller="Home" asp-action="CreateUser" method="POST">
+                    <tr>
+                        <td><label asp-for="FirstName">First Name:</label></td>
+                        <td><input placeholder="First Name" asp-for="FirstName"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><p><span asp-validation-for="FirstName"></span></p></td>
+                    </tr>
+                    <tr>
+                        <td><label asp-for="LastName">Last Name:</label></td>
+                        <td><input placeholder="Last Name" asp-for="LastName"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><p><span asp-validation-for="LastName"></span></p></td>
+                    </tr>
+                    <tr>
+                        <td><label asp-for="Email">Email:</label></td>
+                        <td><input placeholder="email"  asp-for="Email"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><p><span asp-validation-for="Email"></span></p></td>
+                    </tr>
+                    <tr>
+                        <td><label asp-for="Password">Password:</label></td>
+                        <td><input placeholder="password" asp-for="Password"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><p><span asp-validation-for="Password"></span></p></td>
+                    </tr>
+                    <tr>
+                        <td><label asp-for="cPassword">Confirm:</label></td>
+                        <td><input type="password" placeholder="confirm password" asp-for="cPassword"></td>
+                    </tr>
+                    <tr>
+                        <td><p></p></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="Register"></td>
+                    </tr>
+                </form> 
+            </table>
+        </div>
+        <div class="registration_divider"></div>
+        <div class="login_form">
+            <h3 class="">Log in</h3>
+            <form action="/login" method='POST'>
+            <table>
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="text" placeholder='email' name="email"></td>
+                </tr>
+                <tr>
+                    <td><p></p></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password:</label></td>
+                    <td><input type="password" placeholder='password' name="password"></td>
+                </tr>
+                <tr>
+                    <td><p></p></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Login"></td></form>
+                </tr>
+            </table>
+            @{
+                <p class="errors">@ViewBag.errors</p>
+            }
+        </div>
+    </div>
+</div>
