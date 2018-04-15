@@ -4,10 +4,6 @@
 <h2>@ViewData["Title"]</h2>
 <h3>@ViewData["Message"]</h3>
 
-<form asp-controller="Home" asp-action="logout" method="POST">
-    <button type="submit">Logout</button>
-</form>
-
 <h1>Welcome @ViewBag.user_fn, to the amazing and totally original 'Friend-Book'!</h1>
 <div class="post">
     <h3>What's on your mind:</h3>
@@ -39,7 +35,7 @@
                     }
                 </div>
                 <h3>Add a Comment:</h3>
-                <form action='/comment' method='POST'>
+                <form asp-controller="Wall" asp-action="Comment" method="POST">
                     <input type="hidden" name="postId" value="@post["id"]">
                     <textarea name="content" rows="2" cols="40"></textarea>
                     <div class="buttons">

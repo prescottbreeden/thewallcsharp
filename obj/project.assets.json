@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
+      "BCrypt.Net-Core/1.4.0": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "System.Runtime.Extensions": "4.1.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/BCrypt.Net-Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/BCrypt.Net-Core.dll": {}
+        }
+      },
       "Google.Protobuf/3.3.0": {
         "type": "package",
         "dependencies": {
@@ -5099,6 +5112,20 @@
     }
   },
   "libraries": {
+    "BCrypt.Net-Core/1.4.0": {
+      "sha512": "61fIfobQh+o1vsoLTY6abM2UnyFLGAXJSqLYAwlNMfC3445kDD57AqLrJIAOFcHsgn+T3i8tbCP0ugK5btA6Uw==",
+      "type": "package",
+      "path": "bcrypt.net-core/1.4.0",
+      "files": [
+        "bcrypt.net-core.1.4.0.nupkg.sha512",
+        "bcrypt.net-core.nuspec",
+        "lib/net40/BCrypt.Net-Core.dll",
+        "lib/net45/BCrypt.Net-Core.dll",
+        "lib/net451/BCrypt.Net-Core.dll",
+        "lib/net452/BCrypt.Net-Core.dll",
+        "lib/netstandard1.3/BCrypt.Net-Core.dll"
+      ]
+    },
     "Google.Protobuf/3.3.0": {
       "sha512": "W0TsIYM2ED9dc/FgdbdtP68vUP1JdbwaFscG3DeVtJNlfm8A/ozjAT0H3dWIk0jJd9Zcx6B7XZ1LYERF8PqqJA==",
       "type": "package",
@@ -13257,6 +13284,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
+      "BCrypt.Net-Core >= 1.4.0",
       "Microsoft.AspNetCore.All >= 2.0.5",
       "Microsoft.NETCore.App >= 2.0.0",
       "MySql.Data >= 8.0.9-*"
@@ -13301,6 +13329,10 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
+          "BCrypt.Net-Core": {
+            "target": "Package",
+            "version": "[1.4.0, )"
+          },
           "Microsoft.AspNetCore.All": {
             "target": "Package",
             "version": "[2.0.5, )"

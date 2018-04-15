@@ -1,37 +1,41 @@
-using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace login_reg.Models
 {
-    public class User : BaseEntity
+    public class UserModel
     {
-        public int UserId { get; set; }
         [Required]
-        [MinLength(2)]
         [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Name can only contain letters")]
+        [DisplayName("First Name")]
         public string FirstName { get; set; }
-        [Required]
-        [MinLength(2)]
-        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Name can only contain letters")]
-        public string LastName { get; set; }
-        [Required]
-        [EmailAddress]
-        [UniqueEmail]
-        public string Email { get; set; }
-        [Required]
-        [DataType(DataType.Password)]
-        [MinLength(8)]
-        public string Password { get; set; }
-        [Required]
-        [Compare("Password", ErrorMessage = "Password and confirmation must match.")]
-        public string cPassword { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
 
-        public User()
+        [Required]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Name can only contain letters")]
+        [DisplayName("Last Name")]
+        public string LastName { get; set; }
+
+        [Required]
+        [EmailAddress, UniqueEmail]
+        [DisplayName("Email")]
+        public string Email { get; set; }
+
+        [Required]
+        [MinLength(8)]
+        [DataType(DataType.Password)]
+        [DisplayName("Password")]
+        public string Password { get; set; }
+
+        [Required]
+        [Compare("Password")]
+        [MinLength(8)]
+        [DataType(DataType.Password)]
+        [DisplayName("Confirm")]
+        public string Cpassword { get; set; }
+        public UserModel()
         {
             
         }
-
     }
 }

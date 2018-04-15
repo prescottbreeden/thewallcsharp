@@ -1,0 +1,35 @@
+@model login_reg.Models.LoginUserModel
+<h1>Login</h1>
+<div class="content">
+<form asp-controller="Home" asp-action="Login" method="POST">
+        <div class="line">
+        <div class="block">
+            <label asp-for="Email"></label>
+        </div>
+        <div class="block">
+            <input asp-for="Email">
+        </div>
+        <div class="block">
+            <div></div>
+        </div>
+    </div>
+    <div class="line">
+        <span class="err-message" asp-validation-for="Email"></span>
+    </div>
+    <div class="line">
+        <div class="block">
+            <label asp-for="Password"></label>
+        </div>
+        <div class="block">
+            <input asp-for="Password">
+        </div>
+        <div class="block">
+            <a href="/">Not Registered?</a>
+        </div>
+    </div>
+    <div class="line">
+        <span class="err-message" asp-validation-for="Password"></span>
+    </div>
+<button type="submit">Submit</button> 
+</form>
+</div>
