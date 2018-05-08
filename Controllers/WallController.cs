@@ -19,7 +19,7 @@ namespace login_reg.Controllers
         }
 
         [HttpGet]
-        [Route("Wall")]
+        [Route("wall")]
         public IActionResult Wall()
         {
             int? userId = HttpContext.Session.GetInt32("userId");
@@ -63,7 +63,7 @@ namespace login_reg.Controllers
                 var all_comments = _dbConnector.Query(query);
                 ViewBag.all_comments = all_comments;
 
-                return View("Wall", "Wall");
+                return View("Wall");
             }
             else
             {

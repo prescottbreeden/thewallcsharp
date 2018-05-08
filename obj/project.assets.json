@@ -13297,11 +13297,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Goethe/Dropbox/code/csharp/mvc/login_reg/login_reg.csproj",
+      "projectUniqueName": "/Users/Goethe/Documents/code/codingDojo/csharp/mvc/bprep/the_wall/login_reg.csproj",
       "projectName": "login_reg",
-      "projectPath": "/Users/Goethe/Dropbox/code/csharp/mvc/login_reg/login_reg.csproj",
+      "projectPath": "/Users/Goethe/Documents/code/codingDojo/csharp/mvc/bprep/the_wall/login_reg.csproj",
       "packagesPath": "/Users/Goethe/.nuget/packages/",
-      "outputPath": "/Users/Goethe/Dropbox/code/csharp/mvc/login_reg/obj/",
+      "outputPath": "/Users/Goethe/Documents/code/codingDojo/csharp/mvc/bprep/the_wall/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
